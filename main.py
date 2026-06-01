@@ -86,7 +86,11 @@ async def contact(data: ContactMessage):
     msg.attach(MIMEText(html_body, "html"))
 
     try:
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+        # Switch to standard SMTP on port 587
+        with smtplib.SMTP("smtp.gmail.com", 587) as server:
+            server.ehlo() 
+            server.starttls() # Securely upgrade the connection to TLS
+            server.ehlo()
             server.login(sender_email, sender_password)
             server.sendmail(sender_email, receiver_email, msg.as_string())
     except smtplib.SMTPAuthenticationError:
