@@ -1,7 +1,7 @@
 // ─── CONFIG ───────────────────────────────────────────────────────────────────
 // After deploying to Render, replace this URL with your actual Render URL
 // Example: https://mo-shuly-portfolio-api.onrender.com
-const API_URL = "https://your-backend.onrender.com";
+const API_URL = "https://portfolio-backend-1-e0wz.onrender.com";
 
 // ─── NAV ──────────────────────────────────────────────────────────────────────
 const mob = document.getElementById("mob-menu");
